@@ -27,15 +27,7 @@ Cinema.prototype.findByGenre = function (genre){
   return foundFilm
 
 }
-// Cinema.prototype.haveFilmsFromYear = function (year){
-//   let result = false
-//   for (film of this.films){
-//     if (film.year === year){
-//       result = true
-//     }
-//   }
-//   return result
-// }
+
 
 Cinema.prototype.haveFilmsFromYear = function (year){
   let result = this.films.some((film)=>{
@@ -61,11 +53,16 @@ Cinema.prototype.totalTime = function () {
   return result
 }
 
+Cinema.prototype.filmsByProperty = function (property, value){
+  const foundFilm = this.films.filter((film)=>{
+    return film[property] === value
 
-// Cinema.prototype.haveFilmsFromYear = function (year){
-//   const result = this.films.values(film).includes(year)
-//   return result
-// }
+  })
+  return foundFilm
+
+}
+
+
 
 
 module.exports = Cinema;
