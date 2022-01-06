@@ -19,4 +19,12 @@ Cinema.prototype.findByTitle = function (title) {
   return foundFilm
 }
 
+Cinema.prototype.findByGenre = function (genre){
+  const foundFilm = this.films.filter((film)=>{
+    return film.genre === genre
+
+  })
+  return foundFilm
+
+}
 module.exports = Cinema;
